@@ -116,6 +116,16 @@
   .hero-title {
     font-size: clamp(2.5rem, 10vw, 4rem);
   }
+
+  .hero-content {
+    padding-top: 0;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .scroll-indicator {
+    bottom: 20px;
+  }
   
   .btn {
     width: 100%;
