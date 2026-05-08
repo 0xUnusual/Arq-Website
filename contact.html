@@ -89,8 +89,12 @@
         <a href="contact.html" class="nav-link active magnetic">Contacto</a>
       </nav>
       <div class="nav-actions">
-        <button class="theme-toggle magnetic"><i class="ph ph-moon"></i></button>
-        <button class="menu-btn magnetic"><span></span><span></span><span></span></button>
+        <button class="theme-toggle magnetic" aria-label="Toggle Dark Mode">
+          <i class="ph ph-moon"></i>
+        </button>
+        <button class="menu-btn magnetic" aria-label="Toggle Menu">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </div>
   </header>
@@ -98,15 +102,16 @@
   <main>
     <section class="page-header">
       <div class="container">
-        <span class="subtitle reveal-up">Hablemos</span>
-        <h1 class="title-xl reveal-up" style="transition-delay: 0.2s">Iniciemos un Proyecto.</h1>
+        <span class="subtitle">Hablemos</span>
+        <h1 class="title-xl">Iniciemos un Proyecto.</h1>
       </div>
     </section>
 
     <section class="section">
       <div class="container">
         <div class="contact-grid">
-          <div class="contact-form reveal-up">
+          <div class="contact-form">
+            <h2 class="title-md" style="margin-bottom: var(--space-md);">Envíanos un Mensaje</h2>
             <form action="#" method="POST">
               <div class="form-group">
                 <input type="text" class="form-control" placeholder="Nombre Completo" required>
@@ -120,26 +125,39 @@
               <div class="form-group">
                 <textarea class="form-control" placeholder="Detalles de su proyecto..." required></textarea>
               </div>
-              <button type="submit" class="btn btn-primary magnetic" style="margin-top: var(--space-md);">Enviar
-                Mensaje</button>
+              <button type="submit" class="btn btn-primary magnetic" style="margin-top: var(--space-md);">Enviar Mensaje</button>
             </form>
           </div>
 
-          <div class="contact-info reveal-up" style="transition-delay: 0.2s;">
-            <h3>Sede Principal</h3>
-            <p>Paseo de la Castellana 15,<br>28046 Madrid, España</p>
+          <div class="contact-info">
+            <div style="margin-bottom: var(--space-lg);">
+              <h3>Sede Principal</h3>
+              <p>Paseo de la Castellana 15, Planta 4<br>28046 Madrid, España</p>
+            </div>
 
-            <h3>Contacto Directo</h3>
-            <p>
-              <a href="mailto:hello@arqjuliop.com"
-                style="border-bottom: 1px solid currentColor;">hello@arqjuliop.com</a><br>
-              +34 91 234 5678
-            </p>
+            <div style="margin-bottom: var(--space-lg);">
+              <h3>Proyectos Internacionales</h3>
+              <p>Av. das Nações Unidas, 12901<br>Brooklin Novo, São Paulo - SP, Brasil</p>
+            </div>
 
-            <h3>Redes Sociales</h3>
-            <p>
-              Instagram / LinkedIn / Pinterest
-            </p>
+            <div style="margin-bottom: var(--space-lg);">
+              <h3>Contacto Directo</h3>
+              <p>
+                <a href="mailto:estudio@arquitecto.com"
+                  style="border-bottom: 1px solid currentColor; display: inline-block; margin-bottom: 5px;">estudio@arquitecto.com</a><br>
+                +34 912 345 678
+              </p>
+            </div>
+
+            <div>
+              <h3>Presencia Digital</h3>
+              <p style="display: flex; gap: var(--space-md); flex-wrap: wrap;">
+                <a href="#" class="magnetic">Instagram</a>
+                <a href="#" class="magnetic">LinkedIn</a>
+                <a href="#" class="magnetic">Behance</a>
+                <a href="#" class="magnetic">Pinterest</a>
+              </p>
+            </div>
           </div>
         </div>
       </div>
