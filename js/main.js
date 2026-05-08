@@ -32,7 +32,10 @@ class App {
   }
 
   hidePreloader() {
-    if (!this.preloader) return;
+    if (!this.preloader) {
+      document.body.style.overflow = '';
+      return;
+    }
     
     const bar = this.preloader.querySelector('.preloader-bar');
     if (bar) {
@@ -40,12 +43,15 @@ class App {
       
       setTimeout(() => {
         this.preloader.classList.add('hidden');
-        // Remove from DOM after transition to free up memory
+        document.body.style.overflow = ''; // Ensure scroll is enabled
+        
         setTimeout(() => {
           this.preloader.style.display = 'none';
-          document.body.classList.remove('loading');
         }, 1000);
       }, 500);
+    } else {
+      this.preloader.classList.add('hidden');
+      document.body.style.overflow = '';
     }
   }
 
@@ -53,7 +59,6 @@ class App {
     this.menuBtn.classList.toggle('active');
     this.navLinks.classList.toggle('active');
     
-    // Prevent scrolling when menu is open
     if (this.navLinks.classList.contains('active')) {
       document.body.style.overflow = 'hidden';
     } else {
@@ -63,20 +68,5 @@ class App {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Add loading class to prevent scrolling during preloader
-  document.body.classList.add('loading');
-  document.body.style.overflow = 'hidden';
-  
-  // Re-enable scroll when preloader hides
-  const observer = new MutationObserver((mutations) => {
-    mutations.forEach((mutation) => {
-      if (mutation.attributeName === 'class' && !document.body.classList.contains('loading')) {
-        document.body.style.overflow = '';
-      }
-    });
-  });
-  
-  observer.observe(document.body, { attributes: true });
-
   new App();
 });
