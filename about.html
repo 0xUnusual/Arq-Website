@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estudio | Arq. Julio P.</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+  <link rel="stylesheet" href="./css/variables.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/animations.css">
+  <link rel="stylesheet" href="./css/responsive.css">
+
+  <style>
+    .page-header {
+      padding-top: calc(var(--header-height) + var(--space-xl));
+      padding-bottom: var(--space-lg);
+      background-color: var(--clr-bg-alt);
+    }
+  </style>
+</head>
+<body>
+  <div class="custom-cursor"></div>
+  <div class="custom-cursor-follower"></div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container nav">
+      <a href="index.html" class="logo">ARQ. JULIO P.</a>
+      <nav class="nav-links">
+        <a href="index.html" class="nav-link">Inicio</a>
+        <a href="about.html" class="nav-link active">Estudio</a>
+        <a href="projects.html" class="nav-link">Proyectos</a>
+        <a href="contact.html" class="nav-link">Contacto</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="theme-toggle" aria-label="Toggle Dark Mode">
+          <i class="ph ph-moon"></i>
+        </button>
+        <button class="menu-btn" aria-label="Toggle Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-header">
+      <div class="container">
+        <span class="subtitle reveal-up">Sobre el Arquitecto</span>
+        <h1 class="title-xl reveal-up" style="transition-delay: 0.2s">Visión & Legado.</h1>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-img image-reveal-wrapper">
+            <div class="image-reveal-overlay"></div>
+            <img src="https://images.unsplash.com/photo-1507676184212-d0330a151b14?auto=format&fit=crop&w=1000&q=80" alt="Julio P. Architect" class="parallax-img" data-speed="0.1">
+          </div>
+          <div class="about-text" style="padding-left: var(--space-md); padding-right: 0;">
+            <h2 class="title-lg reveal-up">Arq. Julio P.</h2>
+            <p class="text-muted reveal-up">
+              Fundador y Director Creativo. Arquitecto con honores graduado en la Universidad Politécnica de Madrid, con maestría en Diseño Sustentable en Milán.
+            </p>
+            <br>
+            <p class="text-muted reveal-up">
+              "Para mí, la arquitectura es la manifestación física del alma humana en el entorno. No diseñamos casas, diseñamos atmósferas; no levantamos muros, coreografiamos la luz."
+            </p>
+            <br>
+            <p class="text-muted reveal-up">
+              Su trabajo ha sido galardonado internacionalmente y publicado en las revistas más prestigiosas del sector. Cada proyecto liderado por él se caracteriza por su enfoque holístico y atención obsesiva al detalle.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; 2026 Arq. Julio P. Todos los derechos reservados.</p>
+        <p>Premium Studio Design</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./js/darkmode.js"></script>
+  <script src="./js/scroll.js"></script>
+  <script src="./js/animations.js"></script>
+  <script src="./js/main.js"></script>
+</body>
+</html>

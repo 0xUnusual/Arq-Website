@@ -1,0 +1,57 @@
+:root {
+  /* Light Theme Colors */
+  --clr-bg: #ffffff;
+  --clr-bg-alt: #f5f5f5;
+  --clr-text: #111111;
+  --clr-text-muted: #777777;
+  --clr-accent: #d8c3a5;
+  --clr-border: rgba(17, 17, 17, 0.1);
+  --clr-overlay: rgba(255, 255, 255, 0.9);
+  --clr-nav-blur: rgba(255, 255, 255, 0.7);
+
+  /* Typography */
+  --font-primary: 'Inter', sans-serif;
+  --font-secondary: 'Playfair Display', serif;
+  
+  /* Fluid Typography */
+  --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+  --text-sm: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);
+  --text-base: clamp(1rem, 0.9rem + 0.5vw, 1.125rem);
+  --text-lg: clamp(1.125rem, 1rem + 0.625vw, 1.5rem);
+  --text-xl: clamp(1.5rem, 1.3rem + 1vw, 2rem);
+  --text-2xl: clamp(2rem, 1.5rem + 2.5vw, 3.5rem);
+  --text-3xl: clamp(2.5rem, 1.5rem + 5vw, 5.5rem);
+  --text-4xl: clamp(3rem, 2rem + 7vw, 8rem);
+
+  /* Spacing */
+  --space-xs: clamp(0.5rem, 0.3rem + 1vw, 1rem);
+  --space-sm: clamp(1rem, 0.8rem + 1vw, 1.5rem);
+  --space-md: clamp(2rem, 1.5rem + 2.5vw, 4rem);
+  --space-lg: clamp(4rem, 3rem + 5vw, 8rem);
+  --space-xl: clamp(6rem, 4rem + 10vw, 12rem);
+
+  /* Layout */
+  --container-width: 1600px;
+  --padding-x: clamp(1.5rem, 5vw, 5rem);
+  
+  /* Transitions */
+  --ease-out-expo: 0.16, 1, 0.3, 1;
+  --transition-fast: 0.3s cubic-bezier(var(--ease-out-expo));
+  --transition-medium: 0.6s cubic-bezier(var(--ease-out-expo));
+  --transition-slow: 1.2s cubic-bezier(var(--ease-out-expo));
+  
+  /* UI Elements */
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --header-height: 90px;
+}
+
+[data-theme="dark"] {
+  --clr-bg: #111111;
+  --clr-bg-alt: #1a1a1a;
+  --clr-text: #ffffff;
+  --clr-text-muted: #999999;
+  --clr-border: rgba(255, 255, 255, 0.1);
+  --clr-overlay: rgba(17, 17, 17, 0.9);
+  --clr-nav-blur: rgba(17, 17, 17, 0.7);
+}

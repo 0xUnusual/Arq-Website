@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Villa Serena | Arq. Julio P.</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+  <link rel="stylesheet" href="./css/variables.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/animations.css">
+  <link rel="stylesheet" href="./css/responsive.css">
+
+  <style>
+    .project-header {
+      height: 80vh;
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      padding-bottom: var(--space-xl);
+    }
+    .project-header-bg {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      object-fit: cover;
+      z-index: -2;
+    }
+    .project-header-overlay {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+      z-index: -1;
+    }
+    .project-meta {
+      display: flex;
+      gap: var(--space-md);
+      border-top: 1px solid var(--clr-border);
+      padding-top: var(--space-md);
+      margin-bottom: var(--space-lg);
+    }
+    .meta-item span {
+      display: block;
+      color: var(--clr-text-muted);
+      font-size: var(--text-xs);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    .meta-item strong {
+      font-size: var(--text-sm);
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+  <div class="custom-cursor"></div>
+  <div class="custom-cursor-follower"></div>
+
+  <header class="header">
+    <div class="container nav">
+      <a href="index.html" class="logo">ARQ. JULIO P.</a>
+      <nav class="nav-links">
+        <a href="index.html" class="nav-link">Inicio</a>
+        <a href="about.html" class="nav-link">Estudio</a>
+        <a href="projects.html" class="nav-link active">Proyectos</a>
+        <a href="contact.html" class="nav-link">Contacto</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="theme-toggle"><i class="ph ph-moon"></i></button>
+        <button class="menu-btn"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="project-header">
+      <img src="https://images.unsplash.com/photo-1600607687931-ceeb8ce43115?auto=format&fit=crop&w=2000&q=80" alt="Villa Serena" class="project-header-bg parallax-img">
+      <div class="project-header-overlay"></div>
+      <div class="container">
+        <h1 class="title-xl" style="color: #fff;">Villa Serena</h1>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="project-meta reveal-up">
+          <div class="meta-item">
+            <span>Cliente</span>
+            <strong>Privado</strong>
+          </div>
+          <div class="meta-item">
+            <span>Ubicación</span>
+            <strong>Marbella, España</strong>
+          </div>
+          <div class="meta-item">
+            <span>Año</span>
+            <strong>2025</strong>
+          </div>
+          <div class="meta-item">
+            <span>Superficie</span>
+            <strong>850 m²</strong>
+          </div>
+        </div>
+        
+        <div class="about-grid" style="margin-bottom: var(--space-xl);">
+          <div class="about-text reveal-up">
+            <h2 class="title-md">El Concepto</h2>
+            <p class="text-muted">
+              Villa Serena es una exploración de la dualidad entre lo masivo y lo etéreo. Muros de concreto expuesto se entrelazan con grandes paneles de cristal que desdibujan los límites entre el interior y el exuberante paisaje exterior.
+            </p>
+          </div>
+        </div>
+
+        <div class="projects-grid masonry stagger-children">
+          <a href="#" class="project-img gallery-item"><img src="https://images.unsplash.com/photo-1600566753086-00f18efc2291?auto=format&fit=crop&w=800&q=80" alt="Detail 1"></a>
+          <a href="#" class="project-img gallery-item"><img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80" alt="Detail 2"></a>
+          <a href="#" class="project-img gallery-item"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Detail 3"></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; 2026 Arq. Julio P. Todos los derechos reservados.</p>
+        <p>Premium Studio Design</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./js/darkmode.js"></script>
+  <script src="./js/scroll.js"></script>
+  <script src="./js/animations.js"></script>
+  <script src="./js/gallery.js"></script>
+  <script src="./js/main.js"></script>
+</body>
+</html>

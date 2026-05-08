@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Arquitecto - Premium Architecture Portfolio. Minimalist, modern, and elegant design studio.">
+  <title>Arquitecto | Architecture Studio</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+    rel="stylesheet">
+
+  <!-- Icons -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="./css/variables.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/animations.css">
+  <link rel="stylesheet" href="./css/responsive.css">
+</head>
+
+<body>
+
+  <!-- Custom Cursor -->
+  <div class="custom-cursor"></div>
+  <div class="custom-cursor-follower"></div>
+
+  <!-- Preloader -->
+  <div class="preloader">
+    <div class="preloader-text">
+      <span>Arquitecto</span>
+    </div>
+    <div class="preloader-progress">
+      <div class="preloader-bar"></div>
+    </div>
+  </div>
+
+  <!-- Scroll Progress -->
+  <div class="scroll-progress-container">
+    <div class="scroll-progress"></div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container nav">
+      <a href="index.html" class="logo">Arquitecto</a>
+
+      <nav class="nav-links">
+        <a href="index.html" class="nav-link active">Inicio</a>
+        <a href="about.html" class="nav-link">Estudio</a>
+        <a href="projects.html" class="nav-link">Proyectos</a>
+        <a href="contact.html" class="nav-link">Contacto</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="theme-toggle" aria-label="Toggle Dark Mode">
+          <i class="ph ph-moon"></i>
+        </button>
+        <button class="menu-btn" aria-label="Toggle Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+      <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=2000&q=80"
+        alt="Modern Architecture" class="hero-bg parallax-img" data-speed="0.3">
+      <div class="hero-overlay"></div>
+
+      <div class="container">
+        <div class="hero-content">
+          <span class="subtitle reveal-up">Estudio de Arquitectura</span>
+          <h1 class="title-xl hero-title reveal-up" style="transition-delay: 0.2s">Redefiniendo el Espacio Moderno.</h1>
+          <p class="reveal-up"
+            style="transition-delay: 0.4s; color: #f5f5f5; font-size: var(--text-lg); margin-bottom: var(--space-md); max-width: 600px;">
+            Diseños atemporales que fusionan minimalismo y funcionalidad para crear experiencias espaciales únicas.
+          </p>
+          <a href="#projects" class="btn btn-primary reveal-up" style="transition-delay: 0.6s">Ver Proyectos</a>
+        </div>
+      </div>
+
+      <div class="scroll-indicator reveal-fade" style="transition-delay: 1.5s">
+        Descubrir
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-text">
+            <span class="subtitle reveal-up">Nuestra Filosofía</span>
+            <h2 class="title-lg reveal-up">Diseño pensado para el futuro.</h2>
+            <p class="text-muted reveal-up">
+              En Arquitecto, creemos que la arquitectura no es solo construir paredes, sino esculpir el vacío para dar
+              lugar a la luz, la textura y la vida. Cada proyecto es una narrativa única, una sinfonía de materiales que
+              interactúan con su entorno.
+            </p>
+            <br>
+            <p class="text-muted reveal-up">
+              Con más de 15 años de experiencia internacional, nuestro estudio se especializa en crear espacios
+              residenciales y comerciales de alto nivel.
+            </p>
+            <a href="about.html" class="btn reveal-up" style="margin-top: var(--space-md);">Conocer al Arquitecto</a>
+          </div>
+
+          <div class="about-img image-reveal-wrapper">
+            <div class="image-reveal-overlay"></div>
+            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1000&q=80"
+              alt="Interior Architecture" class="parallax-img" data-speed="0.1">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section section-padding-bottom">
+      <div class="container">
+        <span class="subtitle reveal-up">Especialidades</span>
+        <h2 class="title-lg reveal-up" style="margin-bottom: var(--space-lg);">Nuestros Servicios</h2>
+
+        <div class="services-list stagger-children">
+          <a href="#" class="service-item">
+            <h3 class="service-title">Diseño Residencial</h3>
+            <i class="ph ph-arrow-up-right" style="font-size: 1.5rem;"></i>
+          </a>
+          <a href="#" class="service-item">
+            <h3 class="service-title">Diseño Comercial</h3>
+            <i class="ph ph-arrow-up-right" style="font-size: 1.5rem;"></i>
+          </a>
+          <a href="#" class="service-item">
+            <h3 class="service-title">Interiorismo de Lujo</h3>
+            <i class="ph ph-arrow-up-right" style="font-size: 1.5rem;"></i>
+          </a>
+          <a href="#" class="service-item">
+            <h3 class="service-title">Urbanismo y Paisajismo</h3>
+            <i class="ph ph-arrow-up-right" style="font-size: 1.5rem;"></i>
+          </a>
+          <a href="#" class="service-item">
+            <h3 class="service-title">Remodelaciones Premium</h3>
+            <i class="ph ph-arrow-up-right" style="font-size: 1.5rem;"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Projects -->
+    <section class="section" id="projects" style="background-color: var(--clr-bg-alt);">
+      <div class="container">
+        <div
+          style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: var(--space-lg);">
+          <div>
+            <span class="subtitle reveal-up">Portafolio</span>
+            <h2 class="title-lg reveal-up" style="margin-bottom: 0;">Obras Destacadas</h2>
+          </div>
+          <a href="projects.html" class="btn reveal-up">Ver Todos</a>
+        </div>
+
+        <div class="projects-grid masonry stagger-children">
+          <!-- Project 1 -->
+          <a href="project-details.html" class="project-card gallery-item">
+            <div class="project-img">
+              <img src="https://images.unsplash.com/photo-1600607687931-ceeb8ce43115?auto=format&fit=crop&w=800&q=80"
+                alt="Casa Minimalista" loading="lazy">
+            </div>
+            <div class="project-info">
+              <span class="project-category">Residencial - 2025</span>
+              <h3 class="project-title">Villa Serena</h3>
+            </div>
+          </a>
+
+          <!-- Project 2 -->
+          <a href="project-details.html" class="project-card gallery-item">
+            <div class="project-img">
+              <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80"
+                alt="Edificio Comercial" loading="lazy">
+            </div>
+            <div class="project-info">
+              <span class="project-category">Comercial - 2024</span>
+              <h3 class="project-title">Torre Lumina</h3>
+            </div>
+          </a>
+
+          <!-- Project 3 -->
+          <a href="project-details.html" class="project-card gallery-item">
+            <div class="project-img">
+              <img src="https://images.unsplash.com/photo-1600566753086-00f18efc2291?auto=format&fit=crop&w=800&q=80"
+                alt="Interiorismo" loading="lazy">
+            </div>
+            <div class="project-info">
+              <span class="project-category">Interiorismo - 2024</span>
+              <h3 class="project-title">Penthouse Horizon</h3>
+            </div>
+          </a>
+
+          <!-- Project 4 -->
+          <a href="project-details.html" class="project-card gallery-item">
+            <div class="project-img">
+              <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80"
+                alt="Remodelación" loading="lazy">
+            </div>
+            <div class="project-info">
+              <span class="project-category">Remodelación - 2023</span>
+              <h3 class="project-title">Casa de la Roca</h3>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="section stats-container">
+      <div class="container">
+        <div class="stats-grid">
+          <div>
+            <span class="stat-number" data-target="150" data-suffix="+">0</span>
+            <span class="stat-label">Proyectos Completados</span>
+          </div>
+          <div>
+            <span class="stat-number" data-target="15" data-suffix="+">0</span>
+            <span class="stat-label">Años de Experiencia</span>
+          </div>
+          <div>
+            <span class="stat-number" data-target="24" data-suffix="">0</span>
+            <span class="stat-label">Premios de Diseño</span>
+          </div>
+          <div>
+            <span class="stat-number" data-target="98" data-suffix="%">0</span>
+            <span class="stat-label">Clientes Satisfechos</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col reveal-up">
+          <h2 class="logo" style="margin-bottom: var(--space-sm);">Arquitecto</h2>
+          <p class="text-muted" style="max-width: 300px;">
+            Diseño arquitectónico que trasciende el tiempo, enfocado en el detalle y la elegancia.
+          </p>
+        </div>
+
+        <div class="footer-col reveal-up" style="transition-delay: 0.1s;">
+          <h3>Enlaces</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="about.html">Estudio</a></li>
+            <li><a href="projects.html">Proyectos</a></li>
+            <li><a href="contact.html">Contacto</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col reveal-up" style="transition-delay: 0.2s;">
+          <h3>Contacto</h3>
+          <ul class="footer-links">
+            <li><a href="mailto:hello@arqjuliop.com">hello@arqjuliop.com</a></li>
+            <li><a href="tel:+1234567890">+1 (234) 567-890</a></li>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom reveal-up" style="transition-delay: 0.3s;">
+        <p>&copy; 2026 Arquitecto Todos los derechos reservados.</p>
+        <p>Premium Studio Design</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="./js/darkmode.js"></script>
+  <script src="./js/scroll.js"></script>
+  <script src="./js/animations.js"></script>
+  <script src="./js/gallery.js"></script>
+  <script src="./js/main.js"></script>
+</body>
+
+</html>
