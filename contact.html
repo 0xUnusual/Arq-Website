@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="es" data-theme="light">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contacto | Arq. Julio P.</title>
-  
+  <title>Contacto | Arquitecto</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+    rel="stylesheet">
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
 
   <link rel="stylesheet" href="./css/variables.css">
@@ -21,14 +24,17 @@
       padding-bottom: var(--space-lg);
       background-color: var(--clr-bg-alt);
     }
+
     .contact-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: var(--space-xl);
     }
+
     .form-group {
       margin-bottom: var(--space-md);
     }
+
     .form-control {
       width: 100%;
       background: transparent;
@@ -40,34 +46,42 @@
       font-family: var(--font-primary);
       transition: border-color var(--transition-fast);
     }
+
     .form-control:focus {
       outline: none;
       border-bottom-color: var(--clr-accent);
     }
+
     textarea.form-control {
       resize: vertical;
       min-height: 100px;
     }
+
     .contact-info h3 {
       font-size: var(--text-lg);
       margin-bottom: var(--space-sm);
     }
+
     .contact-info p {
       color: var(--clr-text-muted);
       margin-bottom: var(--space-md);
     }
+
     @media(max-width: 768px) {
-      .contact-grid { grid-template-columns: 1fr; }
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
+
 <body>
   <div class="custom-cursor"></div>
   <div class="custom-cursor-follower"></div>
 
   <header class="header">
     <div class="container nav">
-      <a href="index.html" class="logo">ARQ. JULIO P.</a>
+      <a href="index.html" class="logo">Arquitecto</a>
       <nav class="nav-links">
         <a href="index.html" class="nav-link magnetic">Inicio</a>
         <a href="about.html" class="nav-link magnetic">Estudio</a>
@@ -106,20 +120,22 @@
               <div class="form-group">
                 <textarea class="form-control" placeholder="Detalles de su proyecto..." required></textarea>
               </div>
-              <button type="submit" class="btn btn-primary magnetic" style="margin-top: var(--space-md);">Enviar Mensaje</button>
+              <button type="submit" class="btn btn-primary magnetic" style="margin-top: var(--space-md);">Enviar
+                Mensaje</button>
             </form>
           </div>
-          
+
           <div class="contact-info reveal-up" style="transition-delay: 0.2s;">
             <h3>Sede Principal</h3>
             <p>Paseo de la Castellana 15,<br>28046 Madrid, España</p>
-            
+
             <h3>Contacto Directo</h3>
             <p>
-              <a href="mailto:hello@arqjuliop.com" style="border-bottom: 1px solid currentColor;">hello@arqjuliop.com</a><br>
+              <a href="mailto:hello@arqjuliop.com"
+                style="border-bottom: 1px solid currentColor;">hello@arqjuliop.com</a><br>
               +34 91 234 5678
             </p>
-            
+
             <h3>Redes Sociales</h3>
             <p>
               Instagram / LinkedIn / Pinterest
@@ -133,7 +149,7 @@
   <footer class="footer">
     <div class="container">
       <div class="footer-bottom">
-        <p>&copy; 2026 Arq. Julio P. Todos los derechos reservados.</p>
+        <p>&copy; 2026 Arquitecto Todos los derechos reservados.</p>
         <p>Premium Studio Design</p>
       </div>
     </div>
@@ -146,4 +162,5 @@
   <script src="./js/transitions.js"></script>
   <script src="./js/main.js"></script>
 </body>
+
 </html>
