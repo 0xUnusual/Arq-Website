@@ -9,11 +9,58 @@ class App {
 
   init() {
     // Handle Preloader
-    window.addEventListener('load', () => {
-      setTimeout(() => {
-        this.hidePreloader();
-      }, 1500); // Minimum 1.5s to show the animation
-    });
+    if (this.preloader) {
+      document.body.style.overflow = 'hidden'; // Prevent scrolling while loading
+      
+      let progress = 0;
+      const bar = this.preloader.querySelector('.preloader-bar');
+      const percentText = this.preloader.querySelector('.percentage-text');
+      
+      const updateProgress = (val) => {
+        if (bar) bar.style.width = `${val}%`;
+        if (percentText) percentText.textContent = `${val}%`;
+      };
+
+      // Animate progress up to 90% before window load event
+      const duration = 1200; // 1.2s to reach ~90%
+      const intervalTime = 30;
+      const step = 90 / (duration / intervalTime);
+      
+      const progressInterval = setInterval(() => {
+        if (progress < 90) {
+          progress += step + (Math.random() * 1.5 - 0.75); // Slight jitter for drafting effect
+          if (progress > 90) progress = 90;
+          updateProgress(Math.round(progress));
+        }
+      }, intervalTime);
+
+      const completeLoading = () => {
+        clearInterval(progressInterval);
+        
+        // Fill to 100% smoothly upon window loading finished
+        let current = Math.round(progress);
+        const finishInterval = setInterval(() => {
+          if (current < 100) {
+            current += 4; // Faster transition to feel Snappy
+            if (current > 100) current = 100;
+            updateProgress(current);
+          } else {
+            clearInterval(finishInterval);
+            setTimeout(() => {
+              this.hidePreloader();
+            }, 300); // Small pause at 100% to let visual settle
+          }
+        }, 15);
+      };
+
+      if (document.readyState === 'complete') {
+        completeLoading();
+      } else {
+        window.addEventListener('load', completeLoading);
+      }
+    } else {
+      document.body.style.overflow = '';
+    }
 
     // Handle Mobile Menu
     if (this.menuBtn && this.navLinks) {
@@ -37,22 +84,12 @@ class App {
       return;
     }
     
-    const bar = this.preloader.querySelector('.preloader-bar');
-    if (bar) {
-      bar.style.width = '100%';
-      
-      setTimeout(() => {
-        this.preloader.classList.add('hidden');
-        document.body.style.overflow = ''; // Ensure scroll is enabled
-        
-        setTimeout(() => {
-          this.preloader.style.display = 'none';
-        }, 1000);
-      }, 500);
-    } else {
-      this.preloader.classList.add('hidden');
-      document.body.style.overflow = '';
-    }
+    this.preloader.classList.add('hidden');
+    document.body.style.overflow = ''; // Ensure scroll is enabled
+    
+    setTimeout(() => {
+      this.preloader.style.display = 'none';
+    }, 1000); // Remove from display block after transition is complete
   }
 
   toggleMenu() {

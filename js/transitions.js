@@ -68,10 +68,31 @@ class Transitions {
   }
 
   transitionTo(href) {
-    this.curtain.classList.add('exit');
-    setTimeout(() => {
-      window.location.href = href;
-    }, 600);
+    const preloader = document.querySelector('.preloader');
+    if (preloader) {
+      // Prevent interactions during transition
+      document.body.style.pointerEvents = 'none';
+      
+      // Slide the preloader back down to cover the screen
+      preloader.style.transition = 'transform 0.8s cubic-bezier(0.77, 0, 0.175, 1)';
+      preloader.classList.remove('hidden');
+      preloader.style.transform = 'translateY(0)';
+      
+      // Ensure the progress indicators look complete on transition out
+      const bar = preloader.querySelector('.preloader-bar');
+      const text = preloader.querySelector('.percentage-text');
+      if (bar) bar.style.width = '100%';
+      if (text) text.textContent = '100%';
+
+      setTimeout(() => {
+        window.location.href = href;
+      }, 800);
+    } else {
+      this.curtain.classList.add('exit');
+      setTimeout(() => {
+        window.location.href = href;
+      }, 600);
+    }
   }
 }
 

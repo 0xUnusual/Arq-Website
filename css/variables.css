@@ -1,13 +1,17 @@
 :root {
   /* Light Theme Colors */
   --clr-bg: #ffffff;
-  --clr-bg-alt: #f5f5f5;
+  --clr-bg-alt: rgba(245, 245, 245, 0.78);
   --clr-text: #111111;
   --clr-text-muted: #777777;
   --clr-accent: #d8c3a5;
   --clr-border: rgba(17, 17, 17, 0.1);
   --clr-overlay: rgba(255, 255, 255, 0.9);
   --clr-nav-blur: rgba(255, 255, 255, 0.7);
+
+  /* Technical Drafting Grid Variables */
+  --blueprint-line: rgba(17, 17, 17, 0.05);
+  --blueprint-line-light: rgba(17, 17, 17, 0.015);
 
   /* Typography */
   --font-primary: 'Inter', sans-serif;
@@ -48,10 +52,14 @@
 
 [data-theme="dark"] {
   --clr-bg: #111111;
-  --clr-bg-alt: #1a1a1a;
+  --clr-bg-alt: rgba(26, 26, 26, 0.78);
   --clr-text: #ffffff;
   --clr-text-muted: #999999;
   --clr-border: rgba(255, 255, 255, 0.1);
   --clr-overlay: rgba(17, 17, 17, 0.9);
   --clr-nav-blur: rgba(17, 17, 17, 0.7);
+
+  /* Technical Drafting Grid Variables */
+  --blueprint-line: rgba(255, 255, 255, 0.04);
+  --blueprint-line-light: rgba(255, 255, 255, 0.012);
 }

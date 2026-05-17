@@ -39,31 +39,237 @@
   opacity: 0;
 }
 
-/* Preloader */
+
+
+/* Preloader Variable System - Black & White Theme Responsive */
+.preloader {
+  --preloader-bg: #ffffff;
+  --preloader-line: rgba(17, 17, 17, 0.12);
+  --preloader-line-light: rgba(17, 17, 17, 0.04);
+  --preloader-accent: #111111;
+  --preloader-text-color: #111111;
+  --preloader-dim: rgba(17, 17, 17, 0.45);
+}
+
+[data-theme="dark"] .preloader {
+  --preloader-bg: #111111;
+  --preloader-line: rgba(255, 255, 255, 0.12);
+  --preloader-line-light: rgba(255, 255, 255, 0.04);
+  --preloader-accent: #ffffff;
+  --preloader-text-color: #ffffff;
+  --preloader-dim: rgba(255, 255, 255, 0.45);
+}
+
+/* Preloader Container */
 .preloader {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100vh;
-  background-color: var(--clr-bg);
+  background-color: var(--preloader-bg);
+  /* Grid paper aesthetics */
+  background-image: 
+    linear-gradient(var(--preloader-line-light) 1px, transparent 1px),
+    linear-gradient(90deg, var(--preloader-line-light) 1px, transparent 1px),
+    linear-gradient(var(--preloader-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--preloader-line) 1px, transparent 1px);
+  background-size: 20px 20px, 20px 20px, 100px 100px, 100px 100px;
+  background-position: center;
   z-index: 10000;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   transition: transform 1s cubic-bezier(0.77, 0, 0.175, 1);
+  overflow: hidden;
+  color: var(--preloader-text-color);
 }
 
 .preloader.hidden {
   transform: translateY(-100%);
 }
 
+/* Custom Blueprint Preloader styles */
+.blueprint-bg-svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  height: 90%;
+  max-width: 1200px;
+  max-height: 800px;
+  opacity: 0.35;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* SVG Theme mappings */
+.blueprint-grid-line {
+  stroke: var(--preloader-line-light);
+}
+
+.blueprint-axis-circle {
+  stroke: var(--preloader-line);
+  fill: none;
+}
+
+.blueprint-axis-text {
+  fill: var(--preloader-dim);
+  font-family: monospace;
+}
+
+.blueprint-drawing {
+  stroke: var(--preloader-line);
+  fill: none;
+}
+
+.draw-path {
+  stroke: var(--preloader-line);
+  stroke-dasharray: 1200;
+  stroke-dashoffset: 1200;
+  animation: drawBlueprintLines 3.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.draw-path-door {
+  stroke: var(--preloader-line);
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  animation: drawBlueprintLines 2s cubic-bezier(0.4, 0, 0.2, 1) forwards 1s;
+}
+
+.draw-stairs rect, .draw-stairs line, .draw-stairs path {
+  stroke: var(--preloader-line);
+}
+
+.draw-furniture rect {
+  stroke: var(--preloader-line-light);
+  fill: none;
+}
+
+.blueprint-cota line {
+  stroke: var(--preloader-line);
+}
+
+.blueprint-cota text {
+  fill: var(--preloader-dim);
+}
+
+.compass-rose circle, .compass-rose line {
+  stroke: var(--preloader-line);
+}
+
+.compass-rose polygon {
+  stroke: var(--preloader-line);
+  fill: none;
+}
+
+.compass-rose polygon:first-of-type {
+  fill: var(--preloader-line);
+}
+
+.compass-rose text {
+  fill: var(--preloader-accent);
+}
+
+.blueprint-scale-text {
+  fill: var(--preloader-dim);
+}
+
+.blueprint-scale-rect {
+  stroke: var(--preloader-line);
+}
+
+.blueprint-scale-fill {
+  fill: var(--preloader-line);
+}
+
+@keyframes drawBlueprintLines {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.compass-rose {
+  transform-origin: 0px 0px;
+  animation: spinCompass 30s linear infinite;
+}
+
+@keyframes spinCompass {
+  from {
+    transform: translate(880px, 120px) rotate(0deg);
+  }
+  to {
+    transform: translate(880px, 120px) rotate(360deg);
+  }
+}
+
+/* Title block styled like architectural blueprints */
+.blueprint-title-block {
+  position: absolute;
+  bottom: var(--space-sm);
+  right: var(--space-sm);
+  border: 1px solid var(--preloader-line);
+  background-color: var(--preloader-bg);
+  font-family: monospace;
+  font-size: var(--text-xs);
+  color: var(--preloader-dim);
+  z-index: 5;
+  backdrop-filter: blur(5px);
+  width: 260px;
+  display: flex;
+  flex-direction: column;
+}
+
+.title-block-row {
+  border-bottom: 1px solid var(--preloader-line);
+  padding: 6px 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.title-block-row-double {
+  display: flex;
+}
+
+.title-block-cell {
+  flex: 1;
+  padding: 6px 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.title-block-cell:first-child {
+  border-right: 1px solid var(--preloader-line);
+}
+
+.title-block-label {
+  font-weight: bold;
+  color: var(--preloader-accent);
+}
+
+.title-block-val {
+  color: var(--preloader-text-color);
+}
+
+/* Preloader central content */
+.preloader-center-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 5;
+  text-align: center;
+}
+
 .preloader-text {
-  font-family: var(--font-secondary);
+  font-family: var(--font-primary);
+  font-weight: 500;
   font-size: var(--text-2xl);
-  color: var(--clr-text);
+  color: var(--preloader-accent);
   overflow: hidden;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
 }
 
 .preloader-text span {
@@ -72,13 +278,54 @@
   animation: revealText 1s var(--transition-medium) forwards;
 }
 
-.preloader-progress {
-  width: 200px;
-  height: 1px;
-  background-color: var(--clr-border);
+.preloader-subtitle {
+  font-family: var(--font-primary);
+  font-size: 0.7rem;
+  color: var(--preloader-dim);
+  letter-spacing: 0.35em;
+  margin-top: 0.6rem;
+  font-weight: 500;
+}
+
+.preloader-progress-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
   margin-top: 2rem;
+}
+
+.dim-label {
+  font-family: monospace;
+  font-size: 0.75rem;
+  color: var(--preloader-dim);
+}
+
+.preloader-progress {
+  width: 250px;
+  height: 2px;
+  background-color: var(--preloader-line);
   position: relative;
-  overflow: hidden;
+  overflow: visible;
+}
+
+/* Dimension ticks at ends */
+.preloader-progress::before,
+.preloader-progress::after {
+  content: '';
+  position: absolute;
+  top: -5px;
+  width: 2px;
+  height: 12px;
+  background-color: var(--preloader-accent);
+  transform: rotate(30deg);
+}
+
+.preloader-progress::before {
+  left: 0;
+}
+
+.preloader-progress::after {
+  right: 0;
 }
 
 .preloader-bar {
@@ -87,8 +334,16 @@
   left: 0;
   height: 100%;
   width: 0%;
-  background-color: var(--clr-accent);
-  transition: width 0.5s ease;
+  background-color: var(--preloader-accent);
+  box-shadow: 0 0 10px var(--preloader-line);
+  transition: width 0.3s ease;
+}
+
+.percentage-text {
+  min-width: 45px;
+  text-align: right;
+  color: var(--preloader-accent);
+  font-weight: bold;
 }
 
 @keyframes revealText {

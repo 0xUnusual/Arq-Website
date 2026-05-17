@@ -25,7 +25,7 @@
       background-color: var(--clr-bg-alt);
       text-align: center;
     }
-    
+
     .projects-container {
       padding: var(--space-md) 0;
     }
@@ -38,14 +38,16 @@
 
     .project-card {
       background: var(--clr-bg-alt);
+      border: 1px solid var(--clr-border);
       border-radius: var(--radius-sm);
       overflow: hidden;
-      transition: transform 0.3s ease;
+      transition: transform 0.3s ease, border-color var(--transition-fast);
       display: block;
     }
 
     .project-card:hover {
       transform: translateY(-10px);
+      border-color: var(--clr-accent);
     }
 
     .project-img {
@@ -96,6 +98,158 @@
   <div class="custom-cursor"></div>
   <div class="custom-cursor-follower"></div>
 
+  <!-- Preloader -->
+  <div class="preloader">
+    <!-- Architectural Blueprint background SVG -->
+    <svg class="blueprint-bg-svg" viewBox="0 0 1000 800" xmlns="http://www.w3.org/2000/svg">
+      <!-- Grid axes -->
+      <line x1="100" y1="150" x2="900" y2="150" class="blueprint-grid-line" stroke-width="1" stroke-dasharray="5,5" />
+      <line x1="100" y1="400" x2="900" y2="400" class="blueprint-grid-line" stroke-width="1" stroke-dasharray="5,5" />
+      <line x1="100" y1="650" x2="900" y2="650" class="blueprint-grid-line" stroke-width="1" stroke-dasharray="5,5" />
+
+      <line x1="200" y1="50" x2="200" y2="750" class="blueprint-grid-line" stroke-width="1" stroke-dasharray="5,5" />
+      <line x1="500" y1="50" x2="500" y2="750" class="blueprint-grid-line" stroke-width="1" stroke-dasharray="5,5" />
+      <line x1="800" y1="50" x2="800" y2="750" class="blueprint-grid-line" stroke-width="1" stroke-dasharray="5,5" />
+
+      <!-- Axis Bubbles -->
+      <circle cx="200" cy="40" r="12" class="blueprint-axis-circle" stroke-width="1" />
+      <text x="200" y="44" font-size="10" class="blueprint-axis-text" text-anchor="middle">A</text>
+
+      <circle cx="500" cy="40" r="12" class="blueprint-axis-circle" stroke-width="1" />
+      <text x="500" y="44" font-size="10" class="blueprint-axis-text" text-anchor="middle">B</text>
+
+      <circle cx="800" cy="40" r="12" class="blueprint-axis-circle" stroke-width="1" />
+      <text x="800" y="44" font-size="10" class="blueprint-axis-text" text-anchor="middle">C</text>
+
+      <circle cx="80" cy="150" r="12" class="blueprint-axis-circle" stroke-width="1" />
+      <text x="80" y="154" font-size="10" class="blueprint-axis-text" text-anchor="middle">1</text>
+
+      <circle cx="80" cy="400" r="12" class="blueprint-axis-circle" stroke-width="1" />
+      <text x="80" y="404" font-size="10" class="blueprint-axis-text" text-anchor="middle">2</text>
+
+      <circle cx="80" cy="650" r="12" class="blueprint-axis-circle" stroke-width="1" />
+      <text x="80" y="654" font-size="10" class="blueprint-axis-text" text-anchor="middle">3</text>
+
+      <!-- House Blueprint Drawing (glowing thin lines) -->
+      <g class="blueprint-drawing" stroke-width="1.5" fill="none">
+        <!-- Outer Walls -->
+        <path d="M 200 150 L 800 150 L 800 650 L 500 650 L 500 500 L 200 500 Z" class="draw-path" />
+
+        <!-- Interior walls -->
+        <line x1="500" y1="150" x2="500" y2="400" class="draw-path" />
+        <line x1="200" y1="350" x2="500" y2="350" class="draw-path" />
+        <line x1="500" y1="400" x2="800" y2="400" class="draw-path" />
+
+        <!-- Door Arc Swings -->
+        <!-- Door 1 (Main entrance left) -->
+        <path d="M 200 280 A 50 50 0 0 1 250 330" stroke-dasharray="3,3" class="draw-path-door" />
+        <line x1="200" y1="330" x2="200" y2="280" class="draw-path" />
+
+        <!-- Door 2 (Interior bedroom) -->
+        <path d="M 500 280 A 50 50 0 0 0 450 330" stroke-dasharray="3,3" class="draw-path-door" />
+        <line x1="500" y1="330" x2="500" y2="280" class="draw-path" />
+
+        <!-- Stairs -->
+        <g stroke-width="1" class="draw-stairs">
+          <rect x="520" y="160" width="100" height="150" fill="none" />
+          <line x1="520" y1="180" x2="620" y2="180" />
+          <line x1="520" y1="200" x2="620" y2="200" />
+          <line x1="520" y1="220" x2="620" y2="220" />
+          <line x1="520" y1="240" x2="620" y2="240" />
+          <line x1="520" y1="260" x2="620" y2="260" />
+          <line x1="520" y1="280" x2="620" y2="280" />
+          <line x1="520" y1="300" x2="620" y2="300" />
+          <!-- Stair arrow -->
+          <path d="M 570 300 L 570 170 M 565 175 L 570 170 L 575 175" stroke-width="1" />
+        </g>
+
+        <!-- Furniture details (Dining table & chairs) -->
+        <g stroke-width="1" class="draw-furniture">
+          <!-- Table -->
+          <rect x="300" y="200" width="100" height="60" rx="4" />
+          <!-- Chairs -->
+          <rect x="320" y="185" width="20" height="15" rx="2" />
+          <rect x="360" y="185" width="20" height="15" rx="2" />
+          <rect x="320" y="260" width="20" height="15" rx="2" />
+          <rect x="360" y="260" width="20" height="15" rx="2" />
+        </g>
+
+        <!-- Dimension Marks (Cotas) -->
+        <g class="blueprint-cota" stroke-width="1">
+          <!-- Top cota -->
+          <line x1="200" y1="100" x2="800" y2="100" />
+          <line x1="200" y1="95" x2="200" y2="105" stroke-width="1.5" />
+          <line x1="500" y1="95" x2="500" y2="105" stroke-width="1.5" />
+          <line x1="800" y1="95" x2="800" y2="105" stroke-width="1.5" />
+          <!-- Slash ticks -->
+          <line x1="196" y1="104" x2="204" y2="96" stroke-width="2" />
+          <line x1="496" y1="104" x2="504" y2="96" stroke-width="2" />
+          <line x1="796" y1="104" x2="804" y2="96" stroke-width="2" />
+
+          <text x="350" y="90" font-size="12" class="blueprint-axis-text" text-anchor="middle">6.00m</text>
+          <text x="650" y="90" font-size="12" class="blueprint-axis-text" text-anchor="middle">6.00m</text>
+        </g>
+      </g>
+
+      <!-- Slow Spinning Compass Rose -->
+      <g class="compass-rose" transform="translate(880, 120)">
+        <circle cx="0" cy="0" r="35" fill="none" stroke-width="1" />
+        <circle cx="0" cy="0" r="38" fill="none" stroke-width="0.5" stroke-dasharray="2,2" />
+        <line x1="-45" y1="0" x2="45" y2="0" stroke-width="0.8" />
+        <line x1="0" y1="-45" x2="0" y2="45" stroke-width="0.8" />
+        <!-- Points of the compass -->
+        <polygon points="0,-35 4,-5 -4,-5" stroke-width="0.5" />
+        <polygon points="0,35 4,5 -4,5" stroke-width="0.5" />
+        <polygon points="35,0 5,4 5,-4" stroke-width="0.5" />
+        <polygon points="-35,0 -5,4 -5,-4" stroke-width="0.5" />
+        <text x="0" y="-40" text-anchor="middle" font-weight="bold">N</text>
+      </g>
+
+      <!-- Technical Scale Bar -->
+      <g transform="translate(100, 720)">
+        <text x="0" y="-10" font-size="10" class="blueprint-scale-text">ESCALA 1:50</text>
+        <rect x="0" y="0" width="100" height="6" fill="none" class="blueprint-scale-rect" stroke-width="1" />
+        <rect x="0" y="1" width="25" height="4" class="blueprint-scale-fill" />
+        <rect x="50" y="1" width="25" height="4" class="blueprint-scale-fill" />
+        <text x="0" y="18" class="blueprint-scale-text">0</text>
+        <text x="50" y="18" class="blueprint-scale-text">2.5m</text>
+        <text x="100" y="18" class="blueprint-scale-text">5m</text>
+      </g>
+    </svg>
+
+    <!-- Content Card / Title Block (cajetín de plano) in bottom-right corner -->
+    <div class="blueprint-title-block">
+      <div class="title-block-row"><span class="title-block-label">PROYECTO:</span> <span
+          class="title-block-val">ESTUDIO ARQUITECTO</span></div>
+      <div class="title-block-row"><span class="title-block-label">PLANO:</span> <span class="title-block-val">PLANTA
+          GENERAL</span></div>
+      <div class="title-block-row"><span class="title-block-label">DIBUJO:</span> <span
+          class="title-block-val">Arquitecto P.</span></div>
+      <div class="title-block-row-double">
+        <div class="title-block-cell"><span class="title-block-label">FECHA:</span> <span
+            class="title-block-val">2026</span></div>
+        <div class="title-block-cell"><span class="title-block-label">PLANO NO:</span> <span
+            class="title-block-val">A-01</span></div>
+      </div>
+    </div>
+
+    <!-- Center Info (The brand title & loading bar) -->
+    <div class="preloader-center-content">
+      <div class="preloader-text">
+        <span>Arquitecto</span>
+      </div>
+      <div class="preloader-subtitle">ESTUDIO DE ARQUITECTURA</div>
+
+      <div class="preloader-progress-wrapper">
+        <span class="dim-label left">0.00m</span>
+        <div class="preloader-progress">
+          <div class="preloader-bar"></div>
+        </div>
+        <span class="dim-label right percentage-text">0%</span>
+      </div>
+    </div>
+  </div>
+
   <!-- Header -->
   <header class="header">
     <div class="container nav">
@@ -124,100 +278,116 @@
     <div class="projects-container">
       <div class="container">
         <div class="projects-grid-simple">
-          
+
           <!-- Proyecto 1 -->
           <a href="project-details.html" class="project-card">
             <div class="project-img">
-              <img src="https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&w=800&q=80" alt="Residencia Acantilado">
+              <img src="https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&w=800&q=80"
+                alt="Residencia Acantilado">
             </div>
             <div class="project-content">
               <span class="project-category">Residencial - 2024</span>
               <h3 class="project-title">Residencia Acantilado</h3>
-              <p class="project-description">Arquitectura suspendida sobre el océano, desafiando los límites de la gravedad y el paisaje.</p>
+              <p class="project-description">Arquitectura suspendida sobre el océano, desafiando los límites de la
+                gravedad y el paisaje.</p>
             </div>
           </a>
 
           <!-- Proyecto 2 -->
           <a href="project-details.html" class="project-card">
             <div class="project-img">
-              <img src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=800&q=80" alt="Pabellón de Cristal">
+              <img src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=800&q=80"
+                alt="Pabellón de Cristal">
             </div>
             <div class="project-content">
               <span class="project-category">Cultural - 2023</span>
               <h3 class="project-title">Pabellón de Cristal</h3>
-              <p class="project-description">Transparencia extrema en un entorno botánico, fundiendo el interior con la naturaleza virgen.</p>
+              <p class="project-description">Transparencia extrema en un entorno botánico, fundiendo el interior con la
+                naturaleza virgen.</p>
             </div>
           </a>
 
           <!-- Proyecto 3 -->
           <a href="project-details.html" class="project-card">
             <div class="project-img">
-              <img src="https://images.unsplash.com/photo-1505691938895-1758d7eaa511?auto=format&fit=crop&w=800&q=80" alt="Loft Industrial">
+              <img src="https://images.unsplash.com/photo-1505691938895-1758d7eaa511?auto=format&fit=crop&w=800&q=80"
+                alt="Loft Industrial">
             </div>
             <div class="project-content">
               <span class="project-category">Rehabilitación - 2023</span>
               <h3 class="project-title">Loft Industrial</h3>
-              <p class="project-description">Recuperación de espacios fabriles históricos para la vida moderna, manteniendo el carácter crudo.</p>
+              <p class="project-description">Recuperación de espacios fabriles históricos para la vida moderna,
+                manteniendo el carácter crudo.</p>
             </div>
           </a>
 
           <!-- Proyecto 4 -->
           <a href="project-details.html" class="project-card">
             <div class="project-img">
-              <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80" alt="Hotel Boutique Aura">
+              <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80"
+                alt="Hotel Boutique Aura">
             </div>
             <div class="project-content">
               <span class="project-category">Hospitalidad - 2024</span>
               <h3 class="project-title">Hotel Boutique Aura</h3>
-              <p class="project-description">Experiencia sensorial inmersiva en el desierto, donde el lujo se encuentra con la aridez del terreno.</p>
+              <p class="project-description">Experiencia sensorial inmersiva en el desierto, donde el lujo se encuentra
+                con la aridez del terreno.</p>
             </div>
           </a>
 
           <!-- Proyecto 5 -->
           <a href="project-details.html" class="project-card">
             <div class="project-img">
-              <img src="https://images.unsplash.com/photo-1521575107034-e0fa0b594529?auto=format&fit=crop&w=800&q=80" alt="Biblioteca del Norte">
+              <img src="https://images.unsplash.com/photo-1521575107034-e0fa0b594529?auto=format&fit=crop&w=800&q=80"
+                alt="Biblioteca del Norte">
             </div>
             <div class="project-content">
               <span class="project-category">Público - 2022</span>
               <h3 class="project-title">Biblioteca del Norte</h3>
-              <p class="project-description">Un faro de conocimiento construido en madera y hormigón, diseñado para la luz y el silencio.</p>
+              <p class="project-description">Un faro de conocimiento construido en madera y hormigón, diseñado para la
+                luz y el silencio.</p>
             </div>
           </a>
 
           <!-- Proyecto 6 -->
           <a href="project-details.html" class="project-card">
             <div class="project-img">
-              <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80" alt="Casa Patio">
+              <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80"
+                alt="Casa Patio">
             </div>
             <div class="project-content">
               <span class="project-category">Residencial - 2021</span>
               <h3 class="project-title">Casa Patio</h3>
-              <p class="project-description">Reinterpretación de la vivienda tradicional mediterránea con un giro contemporáneo y minimalista.</p>
+              <p class="project-description">Reinterpretación de la vivienda tradicional mediterránea con un giro
+                contemporáneo y minimalista.</p>
             </div>
           </a>
 
           <!-- Proyecto 7 -->
           <a href="project-details.html" class="project-card">
             <div class="project-img">
-              <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80" alt="Edificio Nube">
+              <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80"
+                alt="Edificio Nube">
             </div>
             <div class="project-content">
               <span class="project-category">Oficinas - 2024</span>
               <h3 class="project-title">Edificio Nube</h3>
-              <p class="project-description">Estructura etérea que desafía la gravedad urbana, optimizando la luz y el bienestar laboral.</p>
+              <p class="project-description">Estructura etérea que desafía la gravedad urbana, optimizando la luz y el
+                bienestar laboral.</p>
             </div>
           </a>
 
           <!-- Proyecto 8 -->
           <a href="project-details.html" class="project-card">
             <div class="project-img">
-              <img src="https://images.unsplash.com/photo-1449156001437-3a16d1daae39?auto=format&fit=crop&w=800&q=80" alt="Capilla del Silencio">
+              <img src="https://images.unsplash.com/photo-1449156001437-3a16d1daae39?auto=format&fit=crop&w=800&q=80"
+                alt="Capilla del Silencio">
             </div>
             <div class="project-content">
               <span class="project-category">Religioso - 2020</span>
               <h3 class="project-title">Capilla del Silencio</h3>
-              <p class="project-description">Minimalismo sacro para la introspección espiritual, un espacio de paz absoluta en el bosque.</p>
+              <p class="project-description">Minimalismo sacro para la introspección espiritual, un espacio de paz
+                absoluta en el bosque.</p>
             </div>
           </a>
         </div>

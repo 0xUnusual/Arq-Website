@@ -74,6 +74,158 @@
   <div class="custom-cursor"></div>
   <div class="custom-cursor-follower"></div>
 
+  <!-- Preloader -->
+  <div class="preloader">
+    <!-- Architectural Blueprint background SVG -->
+    <svg class="blueprint-bg-svg" viewBox="0 0 1000 800" xmlns="http://www.w3.org/2000/svg">
+      <!-- Grid axes -->
+      <line x1="100" y1="150" x2="900" y2="150" class="blueprint-grid-line" stroke-width="1" stroke-dasharray="5,5" />
+      <line x1="100" y1="400" x2="900" y2="400" class="blueprint-grid-line" stroke-width="1" stroke-dasharray="5,5" />
+      <line x1="100" y1="650" x2="900" y2="650" class="blueprint-grid-line" stroke-width="1" stroke-dasharray="5,5" />
+
+      <line x1="200" y1="50" x2="200" y2="750" class="blueprint-grid-line" stroke-width="1" stroke-dasharray="5,5" />
+      <line x1="500" y1="50" x2="500" y2="750" class="blueprint-grid-line" stroke-width="1" stroke-dasharray="5,5" />
+      <line x1="800" y1="50" x2="800" y2="750" class="blueprint-grid-line" stroke-width="1" stroke-dasharray="5,5" />
+
+      <!-- Axis Bubbles -->
+      <circle cx="200" cy="40" r="12" class="blueprint-axis-circle" stroke-width="1" />
+      <text x="200" y="44" font-size="10" class="blueprint-axis-text" text-anchor="middle">A</text>
+
+      <circle cx="500" cy="40" r="12" class="blueprint-axis-circle" stroke-width="1" />
+      <text x="500" y="44" font-size="10" class="blueprint-axis-text" text-anchor="middle">B</text>
+
+      <circle cx="800" cy="40" r="12" class="blueprint-axis-circle" stroke-width="1" />
+      <text x="800" y="44" font-size="10" class="blueprint-axis-text" text-anchor="middle">C</text>
+
+      <circle cx="80" cy="150" r="12" class="blueprint-axis-circle" stroke-width="1" />
+      <text x="80" y="154" font-size="10" class="blueprint-axis-text" text-anchor="middle">1</text>
+
+      <circle cx="80" cy="400" r="12" class="blueprint-axis-circle" stroke-width="1" />
+      <text x="80" y="404" font-size="10" class="blueprint-axis-text" text-anchor="middle">2</text>
+
+      <circle cx="80" cy="650" r="12" class="blueprint-axis-circle" stroke-width="1" />
+      <text x="80" y="654" font-size="10" class="blueprint-axis-text" text-anchor="middle">3</text>
+
+      <!-- House Blueprint Drawing (glowing thin lines) -->
+      <g class="blueprint-drawing" stroke-width="1.5" fill="none">
+        <!-- Outer Walls -->
+        <path d="M 200 150 L 800 150 L 800 650 L 500 650 L 500 500 L 200 500 Z" class="draw-path" />
+
+        <!-- Interior walls -->
+        <line x1="500" y1="150" x2="500" y2="400" class="draw-path" />
+        <line x1="200" y1="350" x2="500" y2="350" class="draw-path" />
+        <line x1="500" y1="400" x2="800" y2="400" class="draw-path" />
+
+        <!-- Door Arc Swings -->
+        <!-- Door 1 (Main entrance left) -->
+        <path d="M 200 280 A 50 50 0 0 1 250 330" stroke-dasharray="3,3" class="draw-path-door" />
+        <line x1="200" y1="330" x2="200" y2="280" class="draw-path" />
+
+        <!-- Door 2 (Interior bedroom) -->
+        <path d="M 500 280 A 50 50 0 0 0 450 330" stroke-dasharray="3,3" class="draw-path-door" />
+        <line x1="500" y1="330" x2="500" y2="280" class="draw-path" />
+
+        <!-- Stairs -->
+        <g stroke-width="1" class="draw-stairs">
+          <rect x="520" y="160" width="100" height="150" fill="none" />
+          <line x1="520" y1="180" x2="620" y2="180" />
+          <line x1="520" y1="200" x2="620" y2="200" />
+          <line x1="520" y1="220" x2="620" y2="220" />
+          <line x1="520" y1="240" x2="620" y2="240" />
+          <line x1="520" y1="260" x2="620" y2="260" />
+          <line x1="520" y1="280" x2="620" y2="280" />
+          <line x1="520" y1="300" x2="620" y2="300" />
+          <!-- Stair arrow -->
+          <path d="M 570 300 L 570 170 M 565 175 L 570 170 L 575 175" stroke-width="1" />
+        </g>
+
+        <!-- Furniture details (Dining table & chairs) -->
+        <g stroke-width="1" class="draw-furniture">
+          <!-- Table -->
+          <rect x="300" y="200" width="100" height="60" rx="4" />
+          <!-- Chairs -->
+          <rect x="320" y="185" width="20" height="15" rx="2" />
+          <rect x="360" y="185" width="20" height="15" rx="2" />
+          <rect x="320" y="260" width="20" height="15" rx="2" />
+          <rect x="360" y="260" width="20" height="15" rx="2" />
+        </g>
+
+        <!-- Dimension Marks (Cotas) -->
+        <g class="blueprint-cota" stroke-width="1">
+          <!-- Top cota -->
+          <line x1="200" y1="100" x2="800" y2="100" />
+          <line x1="200" y1="95" x2="200" y2="105" stroke-width="1.5" />
+          <line x1="500" y1="95" x2="500" y2="105" stroke-width="1.5" />
+          <line x1="800" y1="95" x2="800" y2="105" stroke-width="1.5" />
+          <!-- Slash ticks -->
+          <line x1="196" y1="104" x2="204" y2="96" stroke-width="2" />
+          <line x1="496" y1="104" x2="504" y2="96" stroke-width="2" />
+          <line x1="796" y1="104" x2="804" y2="96" stroke-width="2" />
+
+          <text x="350" y="90" font-size="12" class="blueprint-axis-text" text-anchor="middle">6.00m</text>
+          <text x="650" y="90" font-size="12" class="blueprint-axis-text" text-anchor="middle">6.00m</text>
+        </g>
+      </g>
+
+      <!-- Slow Spinning Compass Rose -->
+      <g class="compass-rose" transform="translate(880, 120)">
+        <circle cx="0" cy="0" r="35" fill="none" stroke-width="1" />
+        <circle cx="0" cy="0" r="38" fill="none" stroke-width="0.5" stroke-dasharray="2,2" />
+        <line x1="-45" y1="0" x2="45" y2="0" stroke-width="0.8" />
+        <line x1="0" y1="-45" x2="0" y2="45" stroke-width="0.8" />
+        <!-- Points of the compass -->
+        <polygon points="0,-35 4,-5 -4,-5" stroke-width="0.5" />
+        <polygon points="0,35 4,5 -4,5" stroke-width="0.5" />
+        <polygon points="35,0 5,4 5,-4" stroke-width="0.5" />
+        <polygon points="-35,0 -5,4 -5,-4" stroke-width="0.5" />
+        <text x="0" y="-40" text-anchor="middle" font-weight="bold">N</text>
+      </g>
+
+      <!-- Technical Scale Bar -->
+      <g transform="translate(100, 720)">
+        <text x="0" y="-10" font-size="10" class="blueprint-scale-text">ESCALA 1:50</text>
+        <rect x="0" y="0" width="100" height="6" fill="none" class="blueprint-scale-rect" stroke-width="1" />
+        <rect x="0" y="1" width="25" height="4" class="blueprint-scale-fill" />
+        <rect x="50" y="1" width="25" height="4" class="blueprint-scale-fill" />
+        <text x="0" y="18" class="blueprint-scale-text">0</text>
+        <text x="50" y="18" class="blueprint-scale-text">2.5m</text>
+        <text x="100" y="18" class="blueprint-scale-text">5m</text>
+      </g>
+    </svg>
+
+    <!-- Content Card / Title Block (cajetín de plano) in bottom-right corner -->
+    <div class="blueprint-title-block">
+      <div class="title-block-row"><span class="title-block-label">PROYECTO:</span> <span
+          class="title-block-val">ESTUDIO ARQUITECTO</span></div>
+      <div class="title-block-row"><span class="title-block-label">PLANO:</span> <span class="title-block-val">PLANTA
+          GENERAL</span></div>
+      <div class="title-block-row"><span class="title-block-label">DIBUJO:</span> <span
+          class="title-block-val">Arquitecto P.</span></div>
+      <div class="title-block-row-double">
+        <div class="title-block-cell"><span class="title-block-label">FECHA:</span> <span
+            class="title-block-val">2026</span></div>
+        <div class="title-block-cell"><span class="title-block-label">PLANO NO:</span> <span
+            class="title-block-val">A-01</span></div>
+      </div>
+    </div>
+
+    <!-- Center Info (The brand title & loading bar) -->
+    <div class="preloader-center-content">
+      <div class="preloader-text">
+        <span>Arquitecto</span>
+      </div>
+      <div class="preloader-subtitle">ESTUDIO DE ARQUITECTURA</div>
+
+      <div class="preloader-progress-wrapper">
+        <span class="dim-label left">0.00m</span>
+        <div class="preloader-progress">
+          <div class="preloader-bar"></div>
+        </div>
+        <span class="dim-label right percentage-text">0%</span>
+      </div>
+    </div>
+  </div>
+
   <header class="header">
     <div class="container nav">
       <a href="index.html" class="logo">Arquitecto</a>
@@ -92,7 +244,7 @@
 
   <main>
     <section class="project-header">
-      <img src="https://images.unsplash.com/photo-1600607687931-ceeb8ce43115?auto=format&fit=crop&w=2000&q=80"
+      <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=2000&q=80"
         alt="Villa Serena" class="project-header-bg parallax-img">
       <div class="project-header-overlay"></div>
       <div class="container">
@@ -134,14 +286,14 @@
 
         <div class="projects-grid masonry stagger-children">
           <a href="#" class="project-img gallery-item"><img
-              src="https://images.unsplash.com/photo-1600566753086-00f18efc2291?auto=format&fit=crop&w=800&q=80"
-              alt="Detail 1"></a>
+              src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=800&q=80"
+              alt="Villa Serena Comedor Detalle"></a>
           <a href="#" class="project-img gallery-item"><img
-              src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80"
-              alt="Detail 2"></a>
+              src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=800&q=80"
+              alt="Villa Serena Baño Hormigón Visto"></a>
           <a href="#" class="project-img gallery-item"><img
-              src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80"
-              alt="Detail 3"></a>
+              src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=800&q=80"
+              alt="Villa Serena Salón y Terraza"></a>
         </div>
       </div>
     </section>

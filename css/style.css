@@ -13,10 +13,19 @@ html {
 body {
   font-family: var(--font-primary);
   background-color: var(--clr-bg);
+  /* Elegant technical blueprint grid lines */
+  background-image: 
+    linear-gradient(var(--blueprint-line-light) 1px, transparent 1px),
+    linear-gradient(90deg, var(--blueprint-line-light) 1px, transparent 1px),
+    linear-gradient(var(--blueprint-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--blueprint-line) 1px, transparent 1px);
+  background-size: 20px 20px, 20px 20px, 100px 100px, 100px 100px;
+  background-position: center;
+  background-attachment: fixed;
   color: var(--clr-text);
   line-height: 1.6;
   overflow-x: hidden;
-  transition: background-color var(--transition-medium), color var(--transition-medium);
+  transition: background-color var(--transition-medium), color var(--transition-medium), background-image var(--transition-medium);
 }
 
 ::selection {
@@ -472,6 +481,10 @@ h1, h2, h3, h4, h5, h6 {
 /* Stats */
 .stats-container {
   background-color: var(--clr-bg-alt);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-top: 1px solid var(--clr-border);
+  border-bottom: 1px solid var(--clr-border);
 }
 
 .stats-grid {
@@ -499,8 +512,20 @@ h1, h2, h3, h4, h5, h6 {
 /* Footer */
 .footer {
   background-color: var(--clr-bg-alt);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-top: 1px solid var(--clr-border);
   padding-top: var(--space-lg);
   padding-bottom: var(--space-md);
+}
+
+/* Global Translucent Tracing Paper Layer Styles for Blueprint Grid Compatibility */
+.page-header,
+section[style*="background-color: var(--clr-bg-alt)"] {
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border-top: 1px solid var(--clr-border);
+  border-bottom: 1px solid var(--clr-border);
 }
 
 .footer-grid {
