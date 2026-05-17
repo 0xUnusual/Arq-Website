@@ -60,7 +60,7 @@ The project has been architected with neat modularity:
 ├── 📄 projects.html       # Full Interactive Project Catalog
 ├── 📄 project-details.html# High-Definition Detail View (Villa Serena)
 ├── 📄 contact.html        # Interactive Contact Form
-├── 📄 preloader-preview.png# High-definition social sharing link preview image
+├── 📄 imagen de preloader.png# High-definition social sharing link preview image
 └── 📄 README.md           # Project Documentation
 ```
 
